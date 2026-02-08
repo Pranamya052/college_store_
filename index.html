@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>College Mini Canteen</title>
+
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#4CAF50">
+
+<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body  style ="background-image: linear-gradient(to right, #cf82ae, #cc7cb1, #c977b4, #c572b8, #bf6ebc, #b17bd2, #9e89e6, #8397f6, #44b6ff, #00d0ff, #00e7ff, #5ffbf1);">
+
+<header>
+  <div class="header-content">
+    <h1>📦📝 College stationery store </h1>
+    <p> All types stationery is available, just a tap away!</p>
+  </div>
+</header>
+
+<main class="page">
+
+<!-- Login Page -->
+<section id="login" class="card login-section" >
+  <h2>Welcome!</h2>
+  <p>Choose your role to get started</p>
+  <div class="button-group"
+      class="visme_d"
+      data-title="canteen login "
+      data-url=" g7ddqxx0-untitled-project? fullpage=true"
+      data-domain"forms"
+      data-full-page="true"
+      data-min-height="100vh"
+      data-form-id="133190">
+    <button class="btn btn-primary" onclick="loginAsUser()">👤 Login as User</button>
+    <button class="btn btn-secondary" onclick="loginAsAdmin()">👨‍💼 Login as Admin</button>
+  </div>
+</section>
+
+<!-- Admin Password Section -->
+<section id="adminPassSection" class="card" style="display:none;">
+  <h2>Admin Access</h2>
+  <div class="form-group">
+    <input type="password" id="adminPass" placeholder="Enter Admin Password" class="input-field">
+  </div>
+  <button class="btn btn-primary" onclick="adminLogin()">Login</button>
+</section>
+
+<!-- User Ordering Section -->
+<section id="userSection" class="card" style="display:none;">
+  <h2>Available Products</h2>
+  <div id="menu" class="menu-grid"></div>
+  <div class="order-summary">
+    <h3>Total:<span id="total">0</span></h3>
+    <button class="btn btn-success" onclick="placeOrder()">Place Order 🛒</button>
+    <button class="btn btn-secondary" onclick="logout()" style="margin-top: 10px;">Back to Login</button>
+  </div>
+</section>
+
+<!-- User Login (name + email) -->
+<section id="userLoginSection" class="card" style="display:none;">
+  <h2>User Login</h2>
+  <div class="form-row">
+    <input type="text" id="userName" placeholder="Your name" class="input-field" maxlength="50">
+    <input type="email" id="userEmail" placeholder="Your email (e.g., user@example.com)" class="input-field" maxlength="100">
+    <button class="btn btn-primary" onclick="submitUserLogin()">Continue</button>
+    <button class="btn btn-secondary" onclick="logout()">Cancel</button>
+  </div>
+  <p style="margin-top:10px;font-size:0.9rem;color:#666;">Your email is used to track your orders on the server. All data is stored securely.</p>
+</section>
+
+<!-- Admin Panel -->
+<section id="adminPanel" class="card" style="display:none;">
+  <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+  <h2>👨‍💼​ Admin Dashboard</h2>
+  <button class="btn btn-secondary" onclick="logout()">Back to Login</button>
+</div>
+  <div class="admin-form">
+    <h3>Add New Item</h3>
+    <div class="form-row">
+      <input type="text" id="itemName" placeholder="Item Name" class="input-field">
+      <input type="number" id="itemqty" placeholder="quantity" class="input-field">
+      <button class="btn btn-primary" onclick="addItem()">Add Item ➕</button>
+    </div>
+  </div>
+  <ul id="adminMenu" class="admin-list"></ul>
+  
+
+  <div id="adminSales" style="margin-top:20px; display:none;">
+    <h2>📊 Sales Analytics</h2>
+
+    <div style="margin-bottom:10px;">
+      <button class="btn btn-secondary" onclick="getThisMonthSales()">This Month</button>
+      <button class="btn btn-secondary" onclick="getThisYearSales()">This Year</button>
+    </div>
+    <h3>📊 Orders Overview</h3>
+  <div style="margin-top:10px;">
+    <input type="text" id="adminSearch" placeholder="Search orders by ID, name, email, item..." class="input-field" style="width:100%;" oninput="loadAdminOrders()">
+  </div>
+
+    <div id="salesReport"></div>
+  </div>
+  
+  
+</section>
+
+</main>
+
+<script src="script.js"></script>
+<script src="https://cdn.socket.io/4.7.4/socket.io.min.js"></script>
+
+<!-- Notification -->
+<div id="notification" class="notification" style="display:none;"></div>
+</body>
+</html>
