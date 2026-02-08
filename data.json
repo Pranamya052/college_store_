@@ -1,5 +1,5 @@
 {
-  "nextOrderId": 17,
+  "nextOrderId": 18,
   "users": [
     {
       "name": "raj",
@@ -15,9 +15,31 @@
       "name": "sudeep",
       "email": "sudeep@gmail.com",
       "token": "mlcg14d186c4fd"
+    },
+    {
+      "name": "pammi",
+      "email": "mpranamya.6091@gmail.com",
+      "token": "mldn6fwlo7esy6"
     }
   ],
   "orders": [
+    {
+      "orderId": 17,
+      "user": {
+        "name": "pammi",
+        "email": "mpranamya.6091@gmail.com"
+      },
+      "items": [
+        {
+          "id": 9,
+          "name": "Rough workbook",
+          "qty": 10
+        }
+      ],
+      "total": null,
+      "status": "active",
+      "timestamp": "2026-02-08T11:10:39.974Z"
+    },
     {
       "orderId": 16,
       "user": {
@@ -423,8 +445,8 @@
     {
       "id": 9,
       "name": "Rough workbook",
-      "stock": 143,
-      "orders": 7
+      "stock": 133,
+      "orders": 17
     }
   ]
 }
