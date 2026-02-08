@@ -22,7 +22,7 @@ A modern, real-time Progressive Web App (PWA) for college stationery store order
 
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com/Rayif18/college-stationery store.git
+   git clone https://github.com/Pranamya052/college-stationery store.git
    cd college-stationery store
    ```
 
